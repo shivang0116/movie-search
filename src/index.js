@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { createContext } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import App from './components/App.js';
+import rootReducer from './reducers';
+import { createStore } from 'redux';
+
+const store = createStore(rootReducer);
+export const StoreContext = createContext();
+class Provider extends React.Component {
+  render() {
+    return (
+      <StoreContext.Provider value={this.props.store}>
+        {this.props.children}
+      </StoreContext.Provider>
+    )
+  }
+
+}
+// console.log(store.getState());
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store}>
+    <App store={store} />
+  </Provider>
+  ,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

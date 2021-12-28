@@ -1,13 +1,142 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(209, 231, 224);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbar {
+  background-color: black;
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: column; */
+}
+
+.search-btn {
+  cursor: pointer;
+  background-color: red;
+  width: 4rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.search-input {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  background-color: white;
+  width: 40%;
+  height: 1.9rem;
+  border: none;
+}
+
+.movie-card,.result {
+  display: relative;
+  width: 75%;
+  display: flex;
+  margin: 2rem auto;
+  background-color: white;
+  border: 1px solid grey;
+}
+.result{
+  width: 45%;
+  position: absolute;
+  top:30%;
+  z-index:1;
+  height: 10rem;
+}
+
+.movie-image,.result-image {
+  flex: 1;
+}
+
+.movie-image img,.result-image img {
+  width: 8rem;
+  height: 100%;
+}
+
+.movie-description,.result-description {
+  position: relative;
+  flex: 10;
+  padding: 1rem;
+}
+
+.plot {
+  margin-top: 0.8rem;
+}
+
+.tabs {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.tab{
+  cursor: pointer;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tab:hover {
+  background-color: rgb(158, 154, 154);
+  color: white;
+}
+
+.title,.result-title {
+  font-weight: bolder;
+}
+
+.footer,.result-footer {
+  position: absolute;
+  display: flex;
+  margin-top: 1.5rem;
+  justify-content: space-between;
+  width: 100%;
+  bottom: 12%;
+  /* vertical-align:text-bottom; */
+}
+
+.favorites,
+.unfavorites,
+.result-tab-add {
+  position: absolute;
+  right: 2.5rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  background-color: blueviolet;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 0.2rem;
+}
+
+.unfavorites {
+  background-color: rgb(218, 66, 40);
+}
+
+.ratings {
+  font-weight: 500;
+}
+.active-tab{
+    background-color: blueviolet;
+    color: whitesmoke;
+}
+.no-movie{
+    color: rgb(80, 74, 74);
+    margin:1rem
 }
